@@ -35,7 +35,7 @@ public class WifiDiagnosis {
 		
 		/*
 		 * Going to do nested if statements
-		 * Dpending on what @ans equals, it'll end or continue the diagnosis
+		 * Depending on what @ans equals, it'll end or continue the diagnosis
 		 */
 		if(ans.equals("yes")){
 			

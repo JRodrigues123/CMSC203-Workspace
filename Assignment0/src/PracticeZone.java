@@ -2,6 +2,13 @@ import java.util.Scanner;
 public class PracticeZone  {
     public static void main(String[] args) {
         
+    	/*
+    	 * For a quicker way to get a system.out.print statement
+    	 * type "sysout" then control+space on your keyboard
+    	 */
+    	
+    	
+    	
     	Scanner in = new Scanner(System.in);
     	
     	String ans;
