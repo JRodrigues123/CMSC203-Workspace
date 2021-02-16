@@ -23,78 +23,52 @@ public class MovieDriver {
 		//Holds the amount of tickets
 		int tickets;
 		
-		//Tells the user to enter  the title
-		System.out.println("Enter the name of the movie: ");
+		//This will allow the loop to repeat or not
+		int checkTheLoop = 1;
 		
-		title = in.nextLine();
-		
-		//Calls the movie class to set the title over there
-		m1.setTitle(title);
-		
-		//Now asks the user to enter the rating
-		System.out.println("Enter the movie rating: ");
-		
-		rating = in.nextLine();
-		
-		//Sets the rating in the Movie class
-		m1.setRating(rating);
-		
-		//Prompts the user
-		System.out.println("Enter the amount of tickets sold: ");
-		
-		tickets = in.nextInt();
-		
-		//Set the tickets in Movie
-		m1.setSoldTickets(tickets);
-		
-		
-		//This is the output
-		System.out.println(m1.toString());
-		
-		
-		System.out.println("Would you like to try again? Enter y or n");
-		in.next();
-		ans = in.nextLine();
-		
-		if(ans.equals("y") || ans.equals("Y")) {
+		do{	
 			
-			do{	
 				//Tells the user to enter  the title
 				System.out.println("Enter the name of the movie: ");
-				
+			
 				title = in.nextLine();
-				
-				//Calls the movie class to set the title over there
+			
+				//Sets the titla of the movie to the Movie Class
 				m1.setTitle(title);
-				
+			
 				//Now asks the user to enter the rating
 				System.out.println("Enter the movie rating: ");
-				
+			
 				rating = in.nextLine();
-				
+			
 				//Sets the rating in the Movie class
 				m1.setRating(rating);
-				
+			
 				//Prompts the user
 				System.out.println("Enter the amount of tickets sold: ");
-				
+			
 				tickets = in.nextInt();
-				
+			
 				//Set the tickets in Movie
 				m1.setSoldTickets(tickets);
-				
-				
+			
+			
 				//This is the output
 				System.out.println(m1.toString());
-				
-				
+			
+			
 				System.out.println("Would you like to try again? Enter y or n");
 				in.next();
 				ans = in.nextLine();
+			
+				//Check if it will loop or not
+				if(ans.equals("n")) {
 				
-				
-			} while(ans == "y" || ans == "Y");
-		}
+				checkTheLoop = 0;
+				}
+			
+			
+		   } while(checkTheLoop == 1);
 		System.out.println("You are done boyo");		
 	}
 
