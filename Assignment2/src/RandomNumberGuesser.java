@@ -27,10 +27,8 @@ public class RandomNumberGuesser {
 		/*
 		 * This'll hold the user's input 
 		 */
-		String answer;
+		String answer = "";
 		
-		//Boolean to test whether they want to keep playing
-		boolean tryAgain = true;
 		
 		System.out.println("Welcome to my random number guesser!!");
 		
@@ -124,14 +122,8 @@ public class RandomNumberGuesser {
 			//User enters whether they want to try again
 			answer = in.nextLine();
 			
-			//This will check the answer
-			if(answer.equals("no") || answer.equals("No")) {
-				
-				tryAgain = false;
-			}
 			
-			
-		}while(tryAgain == true);
+		}while(answer.equals("yes") || !answer.equals("no"));
 		
 		System.out.println("Thanks for playing!");
 	}
