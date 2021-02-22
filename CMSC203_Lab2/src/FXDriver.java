@@ -20,7 +20,9 @@ public class FXDriver extends Application {
 	public void start(Stage stage) throws IOException {
 		//student Task #1:
 		//  instantiate the FXMainPane, name it root
+		FXMainPane root = new FXMainPane();
 		//  set the scene to hold root
+		stage.setScene(new Scene(root, 400, 250));
 		//set stage title
 		stage.setTitle("Hello World GUI");
 		//display the stage
