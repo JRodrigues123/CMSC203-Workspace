@@ -29,8 +29,8 @@ public class RandomNumberGuesser {
 		 */
 		String answer;
 		
-		//This'll help with the do-while loop
-		int loopCheck;
+		//Boolean to test whether they want to keep playing
+		boolean tryAgain = true;
 		
 		System.out.println("Welcome to my random number guesser!!");
 		
@@ -42,7 +42,7 @@ public class RandomNumberGuesser {
 			/*
 			 * During the loop, it'll always reset to zero
 			 */
-			loopCheck = 0;
+			
 			
 			/*
 			 * This will reset the amount of guesses
@@ -124,8 +124,14 @@ public class RandomNumberGuesser {
 			//User enters whether they want to try again
 			answer = in.nextLine();
 			
+			//This will check the answer
+			if(answer.equals("no") || answer.equals("No")) {
+				
+				tryAgain = false;
+			}
 			
-		}while(answer.equals("yes"));
+			
+		}while(tryAgain == true);
 		
 		System.out.println("Thanks for playing!");
 	}
