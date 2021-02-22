@@ -30,17 +30,21 @@ import javafx.scene.layout.VBox;
 public class FXMainPane extends VBox {
 
 	//student Task #2:
+	/*
+	 * Creating the buttons/Label/TextField/HBoxes
+	 */
 	Button button1;
 	Button button2; 
 	Button button3; 
 	Button button4; 
 	Button button5;
 	
-	Label label1;
+	Label label;
 	
 	TextField textField;
 	
-	HBox hBox1, hBox2;
+	HBox hBox1; 
+	HBox hBox2;
 	
 	//student Task #4:
 	//  declare an instance of DataManager
@@ -67,7 +71,7 @@ public class FXMainPane extends VBox {
 		button5 = new Button("Exit");
 		button5.setOnAction(new ButtonHandler());
 		
-		label1 = new Label("Feedback");
+		label = new Label("Feedback");
 		
 		textField = new TextField();
 		
@@ -79,13 +83,20 @@ public class FXMainPane extends VBox {
 		//  set margins and set alignment of the components
 		dataManagerInst = new DataManager();
 		
-		//Setting the margins
-		HBox.setMargin(button1, new Insets(10));
-		HBox.setMargin(button2, new Insets(10));
-		HBox.setMargin(button3, new Insets(10));
-		HBox.setMargin(button4, new Insets(10));
-		HBox.setMargin(button5, new Insets(10));
+		//Setting the margins...button1
+		HBox.setMargin(button1, getInsets());
+		//button2
+		HBox.setMargin(button2, getInsets());
+		//button3
+		HBox.setMargin(button3, getInsets());
+		//button4
+		HBox.setMargin(button4, getInsets());
+		//button5
+		HBox.setMargin(button5, getInsets());
 		
+		/*
+		 * This'll position the hbox to look organized
+		 */
 		hBox1.setAlignment(Pos.CENTER);
 		hBox2.setAlignment(Pos.CENTER);
 		
@@ -99,7 +110,7 @@ public class FXMainPane extends VBox {
 		getChildren().addAll(hBox1, hBox2);
 		
 		//Adds the label and textfield
-		hBox1.getChildren().addAll(label1, textField);
+		hBox1.getChildren().addAll(label, textField);
 	}
 	
 	//Task #4:
@@ -108,6 +119,10 @@ public class FXMainPane extends VBox {
 		
 		public void handle(ActionEvent event) {
 			
+			/**
+			 * This if/else method will initiate depending
+			 * on which button is pressed
+			 */
 			if(event.getTarget() == button1) {
 				textField.setText(dataManagerInst.getHello());
 			}
