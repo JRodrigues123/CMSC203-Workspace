@@ -80,7 +80,7 @@ public class GradeBook
    }
    
    /**
-    * Returns he score size
+    * Returns the score size
     * @return
     */
    public int getScoreSize() {
@@ -88,6 +88,9 @@ public class GradeBook
 	   return scoresSize;
    }
    
+   /**
+    * A toString method that shows al the scores
+    */
    public String toString() {
 	   
 	   String r = " ";
@@ -99,4 +102,6 @@ public class GradeBook
 	   
 	   return r;
    }
+   
+   
 }
