@@ -78,4 +78,25 @@ public class GradeBook
       else
          return sum() - minimum();
    }
+   
+   /**
+    * Returns he score size
+    * @return
+    */
+   public int getScoreSize() {
+	   
+	   return scoresSize;
+   }
+   
+   public String toString() {
+	   
+	   String r = " ";
+	   
+	   for(int i = 0; i < scores.length; i++) {
+		   
+		   r += scores[i] + " "; 
+	   }
+	   
+	   return r;
+   }
 }
