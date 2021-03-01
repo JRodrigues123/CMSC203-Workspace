@@ -93,11 +93,11 @@ public class GradeBook
     */
    public String toString() {
 	   
-	   String r = " ";
+	   String r = "";
 	   
-	   for(int i = 0; i < scores.length; i++) {
+	   for(int i = 0; i < scoresSize; i++) {
 		   
-		   r += scores[i] + " "; 
+		   r = r + scores[i] + " "; 
 	   }
 	   
 	   return r;
