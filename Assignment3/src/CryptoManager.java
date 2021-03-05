@@ -155,7 +155,7 @@ public class CryptoManager {
 		/*
 		 * @param decrypted, this is what the method will return
 		 */
-		String decrypted = " ";
+		String decrypted = "";
 		
 		/*
 		 * This loop will check every single character in the
