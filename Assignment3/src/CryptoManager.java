@@ -56,13 +56,13 @@ public class CryptoManager {
 		 */
 		if(!stringInBounds(plainText)) {
 			
-			return " ";
+			return "";
 		}
 		
 		/*
 		 * This will be used to encrypt the Ceasar
 		 */
-		String encrypted = " ";
+		String encrypted = "";
 		
 		//This will go through the whole String of chars
 		for(int i = 0; i < plainText.length(); i++){
@@ -107,7 +107,7 @@ public class CryptoManager {
 		 * @param bellaso, this is used to get the length 
 		 * of the bellaso string
 		 */
-		String encrypted = " ";
+		String encrypted = "";
 		int uBound = (int)UPPER_BOUND;
 		int bellaso = bellasoStr.length();
 		
@@ -199,7 +199,7 @@ public class CryptoManager {
 		//This is to get the lower bound in terms of int
 		int lowBound = (int)LOWER_BOUND;
 		//This is what will return frmo this method
-		String decrypted = " ";
+		String decrypted = "";
 		
 		/*
 		 * This for loop will help encrypt the bellaso String to 
