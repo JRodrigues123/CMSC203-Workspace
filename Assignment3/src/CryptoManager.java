@@ -123,19 +123,19 @@ public class CryptoManager {
 			 * This is used to get the total for the bellaso
 			 * String while changing it to an int
 			 */
-			int enc = (int)c + (int)bellasoStr.charAt(i % bellaso);
+			int encrypt = (int)c + (int)bellasoStr.charAt(i % bellaso);
 			
 			/*
 			 * This will help make the enc
 			 * variable in bound
 			 */
-			while(enc > uBound) {
+			while(encrypt > uBound) {
 				
-				enc -= RANGE;
+				encrypt -= RANGE;
 			}
 			
 			//This'll append to the encrypted
-			encrypted += (char)enc;
+			encrypted += (char)encrypt;
 		}
 		
 		//Returns the string 
@@ -166,19 +166,19 @@ public class CryptoManager {
 			//This will hold the current character from the  string
 			char c = encryptedText.charAt(a);
 			//This will be used for decryption
-			int decrypt = (int)c - key;
+			int decryptCeasar = (int)c - key;
 			
 			/*
 			 * This while loop will check to make sure that the 
 			 * certain char variable stays in bounds
 			 */
-			while(decrypt < LOWER_BOUND) {
+			while(decryptCeasar < LOWER_BOUND) {
 				
-				decrypt += RANGE;
+				decryptCeasar += RANGE;
 			}
 			
 			//Appends to the decrypted String
-			decrypted += (char)decrypt;
+			decrypted += (char)decryptCeasar;
 		}
 		
 		return decrypted;
