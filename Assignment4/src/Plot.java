@@ -64,6 +64,11 @@ public class Plot {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
+
+	@Override
+	public String toString() {
+		return "Upper left: (" + x + "," + y + "); Width: " + width + " Depth: " + depth;
+	}
 	
 	
 
