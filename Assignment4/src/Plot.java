@@ -1,11 +1,18 @@
 
 public class Plot {
 	
+	/**
+	 * These are used to hold the parameters for 
+	 * x, y, width, and depth, 
+	 */
 	private int x = 0;
 	private int y = 0;
 	private int width = 0;
 	private int depth = 0;
 	
+	/**
+	 * A constructor with no args
+	 */
 	public Plot() {
 		
 		this.x = x;

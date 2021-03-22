@@ -15,6 +15,14 @@ public class Shape {
 		numOfSides = 1;
 	}
 	
+	//Copy
+	public Shape(Shape shape) {
+		
+		this.name = shape.name;
+		this.color = shape.color;
+		this.numOfSides = shape.numOfSides;
+	}
+	
 	
 	 /**
 	  * Second Constructor
