@@ -50,6 +50,10 @@ public class Plot {
 		//This will be used to determine the boolean to return
 		int overLap = 0;
 		
+		/*
+		 * This checks whether or not the parameters
+		 * overlaps with one another
+		 */
 		if(rightX <= x1P2 || leftX >= x1P2) {
 			
 			overLap = 1;
@@ -58,6 +62,7 @@ public class Plot {
 			overLap = 1;
 		}
 		
+		//It'll return false if overlap equals to 1
 		if(overLap == 0) {
 			
 			return false;
@@ -66,6 +71,71 @@ public class Plot {
 			
 			return true;
 		}
+	}
+	
+	public boolean encompasses(Plot p) {
+		
+		/*
+		 * This is to get the x parameters
+		 */
+		int leftX = this.getX();
+		int rightX = (this.getWidth() + this.getX());
+		/*
+		 * This is to get the second parameter from the copy constructor
+		 */
+		int xP2 = p.getX();
+		
+		/*
+		 * This is to get the y parameters
+		 */
+		int upY = this.getY();
+		int downY = (this.getWidth() + this.getY());
+		//Second param from the copy constructor
+		int yP2 = p.getY();
+		
+		/*
+		 * This will be used to hold the flag for the boolean
+		 * to see if the parameters encompasses with one another
+		 */
+		int enc = 0;
+		
+		/*
+		 * This is used to check whether the parameters
+		 * encompasses
+		 */
+		if(leftX + this.getWidth() > xP2) {
+			
+			enc = 1;
+		}
+		if(yP2 < upY + this.getDepth()) {
+			
+			enc = 1;
+		}
+		if(leftX >= xP2 || rightX >= xP2) {
+			
+			enc = 1;
+		}
+		if(upY >= yP2 || downY >= yP2) {
+			
+			enc = 1;
+		}
+		
+		/*
+		 * This will return a boolean
+		 * if enc = 1, it'll be true
+		 */
+		
+		if(enc == 0) {
+			
+			return false;
+		}
+		else {
+			
+			return true;
+		}
+		
+		
+		
 	}
 	
 	/*
@@ -103,7 +173,8 @@ public class Plot {
 	public void setDepth(int depth) {
 		this.depth = depth;
 	}
-
+	
+	//This is the toString method for the plot class
 	@Override
 	public String toString() {
 		return "Upper left: (" + x + "," + y + "); Width: " + width + " Depth: " + depth;
