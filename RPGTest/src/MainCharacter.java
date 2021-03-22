@@ -32,20 +32,11 @@ public class MainCharacter {
 		return gender;
 	}
 
-	public void setGender(char g) {
+	public void setGender(String gender) {
 		
-		if(g == 'b' || g == 'B') {
-			
-			this.gender = "Male";
-		}
-		else if(g == 'g' || g == 'G') {
-			
-			this.gender = "Female";
-		}
-		else if(g == 'n' || g == 'N') {
-			
-			this.gender = "Other";
-		}
+		this.gender = gender;
+		
+		
 		
 	}
 	

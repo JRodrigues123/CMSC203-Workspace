@@ -12,21 +12,40 @@ public class WyvernQuest {
 		MainCharacter character = new MainCharacter();
 		
 		String name;
-		
-		char gender;
+		String gender;
 		
 		System.out.println("Welcome to the world of wadafuk palace, before we start your journey "+
-							"\nwhat is your Gender?(G/g for girl, B/b for Boy, or N/n for Neither ");
-		gender = in.next().charAt(0);
+							"\nwhat is your Gender?(g for girl, b for Boy, or n for Neither, no uppercase) ");
+		gender = in.nextLine();
 		
-		while(gender != 'G' || gender != 'g' || gender != 'B' || gender != 'b' || gender != 'N' || gender != 'n') {
+		//This will determine your gender in this great quest
+		if(gender.charAt(0) == 'g') {
 			
-			System.out.println("Please pick a gender, I don't have time for this...");
+			gender = "Woman";
+			character.setGender(gender);
+		}
+		if(gender.charAt(0) == 'b') {
 			
-			gender = in.next().charAt(0);
+			gender = "Man";
+			character.setGender(gender);
+		}
+		else {
+			
+			gender = "Other";
+			character.setGender(gender);
+			
 		}
 		
-		System.out.println("You are a " + character.getGender());
+		//Character's name
+		System.out.println("You are a " + character.getGender() + "...congrats!");
+		System.out.println("Next up on this lst is well your name, do you remember it?");
+		
+		name = in.nextLine();
+		
+		character.setName(name);
+		
+		System.out.println(character.getName() + "? What a beautiful name, fits you very well.");
+		System.out.println("You will now travers this trwacherous world full of demons and monsters");
 		
 		
 		
