@@ -29,6 +29,45 @@ public class Plot {
 		this.depth = depth;
 	}
 	
+	public boolean overlaps(Plot p) {
+		
+		/*
+		 * This is to get the x parameters for x, left and right side
+		 */
+		int leftX = this.getX();
+		int rightX = (this.getWidth() + this.getX());
+		//This is to get the second parameter from the copy constructor
+		int x1P2 = p.getX();
+		
+		/**
+		 * This is to get the y parameters for y , top and bottom
+		 */
+		int upY = this.getY();
+		int downY = (this.getDepth() + this.getY());
+		//This'll get the second parameter
+		int y1P2 = p.getY();
+		
+		//This will be used to determine the boolean to return
+		int overLap = 0;
+		
+		if(rightX <= x1P2 || leftX >= x1P2) {
+			
+			overLap = 1;
+		}
+		if(downY <= y1P2 || upY >= y1P2) {
+			overLap = 1;
+		}
+		
+		if(overLap == 0) {
+			
+			return false;
+		}
+		else {
+			
+			return true;
+		}
+	}
+	
 	/*
 	 * These are the getters and setters for 
 	 * int x, int y, int width, int depth
