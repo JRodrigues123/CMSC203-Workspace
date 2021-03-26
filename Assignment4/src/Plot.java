@@ -52,112 +52,105 @@ public class Plot {
 		this.depth = depth;
 	}
 	
+	//This method will show if the coordinates overlap one another
 	public boolean overlaps(Plot p) {
 		
 		/*
-		 * This is to get the x parameters for x, left and right side
+		 * These are the boolean variables that will 
+		 * determine if they pass the test in plot test
+		 * using the coordinates from plot
 		 */
-		int leftX = this.getX();
-		int rightX = (this.getWidth() + this.getX());
-		//This is to get the second parameter from the copy constructor
-		int x1P2 = p.getX();
 		
-		/**
-		 * This is to get the y parameters for y , top and bottom
-		 */
-		int upY = this.getY();
-		int downY = (this.getDepth() + this.getY());
-		//This'll get the second parameter
-		int y1P2 = p.getY();
+		//These are for the first overlap test
+		boolean overlaps1XY1;
+		boolean overlaps1XY2;
 		
-		//This will be used to determine the boolean to return
-		int overLap = 0;
+		//Second overlap test variables
+		boolean overlaps2XY1;
+		boolean overlaps2XY2;
+		
+		//Third overlap test variables
+		boolean overlaps3XY1;
+		boolean overlaps3XY2;
+		
+		//Fourth overlap tests variables
+		boolean overlaps4XY1;
+		boolean overlaps4XY2;
 		
 		/*
-		 * This checks whether or not the parameters
-		 * overlaps with one another
+		 * This'll check if the first coordinates overlap with one another, then the second 
+		 * coordinates
 		 */
-		if(rightX <= x1P2 || leftX >= x1P2) {
-			
-			overLap = 1;
-		}
-		if(downY <= y1P2 || upY >= y1P2) {
-			overLap = 1;
-		}
+		overlaps1XY1 = (p.x >= x && p.x < (x+width)) && (p.y >= y && p.y < (y+depth));
 		
-		//It'll return false if overlap equals to 1
-		if(overLap == 0) {
-			
-			return false;
-		}
-		else {
-			
-			return true;
-		}
+		overlaps1XY2 = (x >= p.x && x < (p.x + width)) && (y >= p.y && y < (p.depth + p.y));
+		
+		/*
+		 * This'll check the second test, first coordinates and second
+		 */
+		overlaps2XY1 = (p.width + p.x) > x && (p.x + p.width) < (x + width) && p.y >= y && p.y <= (y+depth);
+		
+		overlaps2XY2 = (x + width) > p.x && (x + width) < (p.x + p.width) && y >= p.y && y <= (p.depth + p.y);
+		
+		/*
+		 * This is the third test
+		 */
+		overlaps3XY1 = p.x >= x && p.x < (width + x) && (p.depth + p.y) > y && (p.depth + p.y) <= (y + depth);
+		
+		overlaps3XY2 = x >= p.x && x < (p.width + p.x) && (depth + y) > p.y && (y + depth) <= (p.depth + p.y);
+		
+		/*
+		 * Fourth test
+		 */
+		overlaps4XY1 = (p.width + p.x) > x && (p.width + p.x) <= (width + x) && (p.depth + p.y) > y && (p.depth + p.y) <= (depth + y);
+		
+		overlaps4XY2 = (width + x) > p.x && (width + x) <= (p.width + p.x) && (depth + y) > p.y && (y + depth) <= (p.y + p.depth);
+		
+		return overlaps1XY1 || overlaps1XY2 || overlaps2XY1 || overlaps2XY2|| overlaps2XY1
+							|| overlaps3XY1 || overlaps3XY2 || overlaps4XY1 || overlaps4XY2;
 	}
 	
+	/**
+	 * For this method, we will need to find out if the 
+	 * given coordinates are encompassing on each other
+	 * @param p
+	 * @return
+	 */
 	public boolean encompasses(Plot p) {
 		
 		/*
-		 * This is to get the x parameters
+		 * These variables determine whether or not the 
+		 * coordinate encompasses each other
 		 */
-		int leftX = this.getX();
-		int rightX = (this.getWidth() + this.getX());
-		/*
-		 * This is to get the second parameter from the copy constructor
-		 */
-		int xP2 = p.getX();
 		
 		/*
-		 * This is to get the y parameters
+		 * New x and y variables used to check if it is
+		 * encompassing
 		 */
-		int upY = this.getY();
-		int downY = (this.getWidth() + this.getY());
-		//Second param from the copy constructor
-		int yP2 = p.getY();
+		boolean encX;
+		boolean encY;
 		
 		/*
-		 * This will be used to hold the flag for the boolean
-		 * to see if the parameters encompasses with one another
+		 * These variables check if the 
+		 * width and depth are in check
 		 */
-		int enc = 0;
+		boolean encDepth;
+		boolean encWidth;
 		
 		/*
-		 * This is used to check whether the parameters
-		 * encompasses
+		 * First are the x and y coordinates
 		 */
-		if(leftX + this.getWidth() > xP2) {
-			
-			enc = 1;
-		}
-		if(yP2 < upY + this.getDepth()) {
-			
-			enc = 1;
-		}
-		if(leftX >= xP2 || rightX >= xP2) {
-			
-			enc = 1;
-		}
-		if(upY >= yP2 || downY >= yP2) {
-			
-			enc = 1;
-		}
+		encX = p.x >= x;
+		encY = p.y >= y;
 		
 		/*
-		 * This will return a boolean
-		 * if enc = 1, it'll be true
+		 * This is now for width and length
 		 */
+		encDepth = (p.depth + p.y) <= (depth + y);
+		encWidth = (p.width + p.x) <= (width + x);
 		
-		if(enc == 0) {
-			
-			return false;
-		}
-		else {
-			
-			return true;
-		}
-		
-		
+		//Returns all these booleans
+		return encX && encY && encDepth && encWidth;
 		
 	}
 	

@@ -9,31 +9,55 @@ import org.junit.Test;
 
 public class ManagementCompanyTestSTUDENT {
 	
+	//Created an object
+	ManagementCompany mgmt;
+	
 	@Before
 	public void setUp() throws Exception {
-		//student create a management company
 		
-		//student add three properties, with plots, to mgmt co
+		/*
+		 * I made mgmt into a company with some added parameters
+		 */
+		mgmt = new ManagementCompany("MGMT Company", "42068", 13);
+		
+		/*
+		 * I will be adding three properties to mgmt
+		 */
+		
+		//First property
+		mgmt.addProperty("Station 1", "Hyattsville", 750, "Edwin");
+		//Next one
+		mgmt.addProperty("Station 2", "Riverdale", 690, "Adrian", 1, 2, 5, 4);
+		//Last property
+		mgmt.addProperty("Station 3", "Miami", 456, "Jacob", 15, 20, 11, 13);
+		
+		
 		
 	}
 
 	@After
 	public void tearDown() {
-		//student set mgmt co to null  
+		mgmt = null;  
 	}
 
 	@Test
 	public void testAddPropertyDefaultPlot() {
-		fail("STUDENT test not implemented yet");
+		
 		//student should add property with 4 args & default plot (0,0,1,1)
+		assertEquals(mgmt.addProperty("Station 1", "Hyattsville", 750, "Edwin"), 3);
 		//student should add property with 8 args
-		//student should add property that exceeds the size of the mgmt co array and can not be added, add property should return -1	
+		assertEquals(mgmt.addProperty("Station 2", "Riverdale", 691, "Adrian", 1, 1, 5, 4), 4);
+		//student should add property that exceeds the size of the mgmt co array and can not be added, add property should return -1
+		assertEquals(mgmt.addProperty("Station 2", "Miami", 456, "Jacob", 15, 20, 11, 13), -1);
 	}
  
 	@Test
 	public void testMaxRentProp() {
-		fail("STUDENT test not implemented yet");
-		//student should test if maxRentProp contains the maximum rent of properties
+		
+		//This is to hold the info for maxRentProp in a String variable
+		double maxRent = mgmt.maxRentProp();
+		
+		
 		
 	}
 

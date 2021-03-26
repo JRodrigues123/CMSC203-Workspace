@@ -10,7 +10,7 @@ public class ManagementCompany {
 	private final int MGMT_WIDTH = 10;
 	private final int MGMT_DEPTH = 10;
 	
-	private int result = 0;
+	private int result;
 	
 	private double mgmFeePer = 0.0;
 	
@@ -82,57 +82,35 @@ public class ManagementCompany {
 	 * This is a add property method that checks if you can 
 	 * make a property based on whats going on
 	 * @param property
-	 * @return
+	 * @returns a number
+	 * Had to redo this particular one because the way i did it before 
+	 * wasnt woring with the GFA test
 	 */
 	public int addProperty(Property property) {
 		
-		//The variable to return
-		int count = 0;
-		
-		//Creates a new property
-		Plot newPlot = new Plot(plot);
-		
-		//Another new property
-		Property addNewProperty = new Property(property);
-		
-		//Checks each property
-		for(int a = 0; a < MAX_PROPERTY; a++) {
+		//If statements that'll determine if your property is good
+		if(result >= MAX_PROPERTY) {
+			return -1;
+		}
+		if(property == null) {
 			
-			//This check the first property to last properties
-
-			properties[a] = property;
+			return -2;
+		}
+		if(!plot.encompasses(property.getPlot())) {
 			
-			if(newPlot.overlaps(addNewProperty.getPlot())) {
-				
-				count = -4;
-			}
-			else if(newPlot.encompasses(addNewProperty.getPlot())) {
-				
-				count = -3;
-			}
-			else if(property == null) {
-				
-				count = -2;
-			}
-			else if(a >= MAX_PROPERTY) {
-				
-				count = -1;
-			}
-			else {
-				
-				/*
-				 * If it passes the previous if/els statements
-				 * the property gets created
-				 */
-				properties[a] = addNewProperty;
-				
-				count = a;
-			}
+			return -3;
+		}
+		if((properties[result] != null) && (property.getPlot().overlaps(properties[result].getPlot()))) {
 			
+			return -4;
 		}
 		
-		//Returns the count variable 
-		return count;
+		properties[result] = property;
+		
+		result++;
+		
+		return result-1;
+		
 	}
 	
 	/**
@@ -150,47 +128,30 @@ public class ManagementCompany {
 		/*
 		 * This creates a property object with regular parameters 
 		 */
-		Property property = new Property(name, city, rent, owner, 0, 0, 1, 1);
-		
-		/*
-		 * This makes a properties array that holds a set amount of properties
-		 */
-		properties[result] = property;
-		
-		//Used in the for loop
-		int b;
-		
-		//used for the for loop
-		result++;
-		
-		for(b = 0; b < result; b++) {
+		Property property = new Property(name, city, rent, owner);
+	
+		//
+		if((property.getPlot().overlaps(properties[result].getPlot()) && (properties[result] != null))) {
 			
-			if(properties[b].getPlot().overlaps(property.getPlot())) {
-				
-				return -4;
-			}
+			return -4;
 		}
-		
-		if(!this.plot.encompasses(property.getPlot())) {
+		if(!plot.encompasses(property.getPlot())) {
 			
 			return -3;
 		}
-		else if(property == null) {
+		if(property == null) {
 			
 			return -2;
 		}
-		else if(result == MAX_PROPERTY) {
+		if(result >= MAX_PROPERTY) {
 			
 			return -1;
 		}
-		else {
-			
-			properties[result] = property;
-			
-			result++;
-			
-			return result - 1;
-		}
+		
+		properties[result] = property;
+		
+		result++;
+		return result-1;
 		
 		
 		
@@ -431,7 +392,7 @@ public class ManagementCompany {
 			manageString += "-";
 		}
 		
-		manageString += "total mangement Fee: " + (0.01 * this.mgmFeePer * this.totalRent());
+		manageString += "\ntotal mangement Fee: " + (0.01 * this.mgmFeePer * this.totalRent());
 		
 		//Returns the String
 		return manageString;
