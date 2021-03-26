@@ -279,7 +279,7 @@ public class ManagementCompany {
 		return maxRent;
 	}
 	
-	
+	//this'll find the highest max rent
 	private int maxRentPropertyIndex() {
 		
 		/*
@@ -384,9 +384,52 @@ public class ManagementCompany {
 
 	@Override
 	public String toString() {
-		return "ManagementCompany [plot=" + plot + ", properties=" + Arrays.toString(properties) + ", MAX_PROPERTY="
-				+ MAX_PROPERTY + ", MGMT_WIDTH=" + MGMT_WIDTH + ", MGMT_DEPTH=" + MGMT_DEPTH + ", mgmFeePer="
-				+ mgmFeePer + ", name=" + name + ", taxID=" + taxID + "]";
+		
+		//37
+		//This will be the return variable 
+		String manageString = "";
+		
+		//
+		manageString += "List of the properties for " + this.getName()
+							+ ",TaxID: " + this.taxID + "\n";
+		
+		//This is here to add the border
+		for(int e = 0; e < 37; e++) {
+			
+			manageString += "-";
+		}
+		
+		/*
+		 * This will output every info about the property
+		 */
+		for(int g = 0; g < this.properties.length; g++) {
+			
+			if(properties[g] != null) {
+				
+				manageString += "\nProperty Name: " + this.properties[g].getPropertyName() +
+								"\n Located in " + this.properties[g].getCity() + 
+								"\n Belonging to: " + this.properties[g].getOwner() +
+								"\n RentAmount: " + this.properties[g].getRentAmount();
+			}
+			
+		}
+		
+		manageString += "\n\n";
+		
+		//This is the end border
+		for(int f = 0; f < 37; f++) {
+			
+			manageString += "-";
+		}
+		
+		manageString += "total mangement Fee: " + (0.01 * this.mgmFeePer * this.totalRent());
+		
+		//Returns the String
+		return manageString;
+		
+		
+		
+		
 	}
 	
 	
