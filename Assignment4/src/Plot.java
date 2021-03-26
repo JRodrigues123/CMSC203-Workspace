@@ -15,19 +15,35 @@ public class Plot {
 	 */
 	public Plot() {
 		
-		this.x = x;
-		this.y = y;
+		this.x = 0;
+		this.y = 0;
 		this.width = 1;
 		this.depth = 1;
 		
 	}
 	
+	/**
+	 * This a constructor with only the 
+	 * Plot in it's constructor
+	 * @param p
+	 */
 	public Plot(Plot p) {
 		
-		Plot copy = new Plot(p.x, p.y, p.width, p.depth);
+		this.x = p.x;
+		this.y = p.y;
+		this.width = p.width;
+		this.depth = p.depth;
+		
 		
 	}
 	
+	/**
+	 * This a constructor with multiple parameters
+	 * @param x
+	 * @param y
+	 * @param width
+	 * @param depth
+	 */
 	public Plot(int x, int y, int width, int depth) {
 		
 		this.x = x;

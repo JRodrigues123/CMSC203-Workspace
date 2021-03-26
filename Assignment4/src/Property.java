@@ -14,7 +14,7 @@ public class Property {
 	/**
 	 * This'll hold the rent amount
 	 */
-	private double rentAmount = 0.0;
+	private double rentAmount;
 	
 	/**
 	 * This creates a plot object from plot.java
@@ -27,10 +27,10 @@ public class Property {
 	public Property() {
 		
 		this.plot = new Plot();
-		propertyName = "";
-		city = "";
-		owner = "";
-		rentAmount = 0;
+		propertyName = " ";
+		city = " ";
+		owner = " ";
+		rentAmount = 0.0;
 		
 	}
 	
@@ -39,12 +39,12 @@ public class Property {
 	 * @param p creates a copy
 	 */
 	public Property(Property p) {
-		
-		this.city = p.getCity();
-		this.owner = p.getOwner();
-		this.propertyName = p.getPropertyName();
-		this.rentAmount = p.getRentAmount();
-		this.plot = p.plot;
+		//Use the get methods if it aint working
+		this.city = p.city;
+		this.owner = p.owner;
+		this.propertyName = p.propertyName;
+		this.rentAmount = p.rentAmount;
+		this.plot = new Plot(p.plot);
 	}
 	
 	/**
@@ -60,7 +60,7 @@ public class Property {
 		this.city = city;
 		this.rentAmount = rentAmount;
 		this.owner = owner;
-		plot = new Plot();
+		this.plot = new Plot();
 	}
 	
 	
@@ -77,7 +77,7 @@ public class Property {
 	 * @param depth
 	 */
 	public Property(String propertyName, String city, double rentAmount, String owner, int x, int y, int width, int depth) {
-		super();
+		
 		this.city = city;
 		this.owner = owner;
 		this.propertyName = propertyName;
@@ -107,7 +107,7 @@ public class Property {
 	}
 
 	public String getPropertyName() {
-		return propertyName;
+		return this.propertyName;
 	}
 
 	public void setPropertyName(String propertyName) {
@@ -115,7 +115,7 @@ public class Property {
 	}
 
 	public double getRentAmount() {
-		return rentAmount;
+		return this.rentAmount;
 	}
 
 	public void setRentAmount(double rentAmount) {
@@ -123,26 +123,26 @@ public class Property {
 	}
 
 	public Plot getPlot() {
-		return plot;
+		return this.plot;
 	}
 
 	public void setPlot(Plot plot) {
 		this.plot = plot;
 	}
 	
-	/**
-	 * This method returns a plot with it's arguments intact
-	 * @param x
-	 * @param y
-	 * @param width
-	 * @param depth
-	 * @return plot
-	 */
-	public Plot setPlot(int x, int y, int width, int depth) {
+	
+	//Tostring method for property
+	public String toString() {
 		
-		plot = new Plot(x, y, width, depth);
+		//String variable that will be returned
+		String appends = "";
 		
-		return plot;
+		appends += "\nProperty Name: " + this.getPropertyName() +
+				  "\nLocated in " + this.getCity() + 
+				  "\n" + "Belonging to: " + this.getOwner() +
+				  "\n" + "Rent Amount: " + this.getRentAmount();
+		
+		return appends;
 	}
 	
 	

@@ -19,14 +19,14 @@ public class ManagementCompany {
 	
 	/**
 	 * A constructor that has no args in it
-	 * it intializes some of the variables and objects
+	 * it initializes some of the variables and objects
 	 */
 	public ManagementCompany() {
 		
-		this.name = "";
-		this.taxID = "";
+		name = "";
+		taxID = "";
 		properties = new Property[MAX_PROPERTY];
-		this.plot = new Plot(0, 0, MGMT_WIDTH, MGMT_DEPTH);
+		plot = new Plot(0, 0, MGMT_WIDTH, MGMT_DEPTH);
 	}
 	
 	/**
@@ -40,7 +40,8 @@ public class ManagementCompany {
 		this.name = name;
 		this.mgmFeePer = mgmFee;
 		this.taxID = taxID;
-		this.plot = new Plot(0, 0, MGMT_WIDTH, MGMT_DEPTH);
+		plot = new Plot(0, 0, MGMT_WIDTH, MGMT_DEPTH);
+		properties = new Property[MAX_PROPERTY];
 	}
 	
 	/**
@@ -59,7 +60,8 @@ public class ManagementCompany {
 		this.taxID = taxID;
 		this.name = name;
 		this.mgmFeePer = mgmFee;
-		this.plot = new Plot(x, y, width, depth);
+		plot = new Plot(x, y, width, depth);
+		properties = new Property[MAX_PROPERTY];
 		
 	}
 	
@@ -69,11 +71,11 @@ public class ManagementCompany {
 	 */
 	public ManagementCompany(ManagementCompany otherCompany) {
 		
-		this.name = otherCompany.name;
-		this.taxID = otherCompany.taxID;
-		this.mgmFeePer = otherCompany.mgmFeePer;
-		this.plot = otherCompany.plot;
-		
+		name = otherCompany.name;
+		taxID = otherCompany.taxID;
+		mgmFeePer = otherCompany.mgmFeePer;
+		plot = otherCompany.plot;
+		properties = new Property[MAX_PROPERTY];
 	}
 	
 	/**
@@ -84,46 +86,53 @@ public class ManagementCompany {
 	 */
 	public int addProperty(Property property) {
 		
-		/*
-		 * This is to check whether or not the properties you create will 
-		 * overlap with on another
-		 */
-		int a;
+		//The variable to return
+		int count = 0;
 		
-		for(a = 0; a < result; a++ ) {
+		//Creates a new property
+		Plot newPlot = new Plot(plot);
+		
+		//Another new property
+		Property addNewProperty = new Property(property);
+		
+		//Checks each property
+		for(int a = 0; a < MAX_PROPERTY; a++) {
 			
-			//This'll return -4 if the properties overlap with on another
-			if(properties[a].getPlot().overlaps(property.getPlot())) {
+			//This check the first property to last properties
+
+			properties[a] = property;
+			
+			if(newPlot.overlaps(addNewProperty.getPlot())) {
 				
-				return -4;
+				count = -4;
+			}
+			else if(newPlot.encompasses(addNewProperty.getPlot())) {
+				
+				count = -3;
+			}
+			else if(property == null) {
+				
+				count = -2;
+			}
+			else if(a >= MAX_PROPERTY) {
+				
+				count = -1;
+			}
+			else {
+				
+				/*
+				 * If it passes the previous if/els statements
+				 * the property gets created
+				 */
+				properties[a] = addNewProperty;
+				
+				count = a;
 			}
 			
 		}
 		
-		if(!this.plot.encompasses(property.getPlot())) {
-			
-			//Returns -3 if the plot isn't part of the mgmt co plot
-			return -3;
-		}
-		else if(property == null) {
-			
-			//returns -2 if the property is null
-			return -2;
-		}
-		else if(result == MAX_PROPERTY) {
-			
-			//Returns -1 if the array of properties is full
-			return -1;
-		}
-		else {
-			
-			//This will add a property to the array
-			properties[result] = property;
-			
-			result++;
-			
-			return result - 1;
-		}
+		//Returns the count variable 
+		return count;
 	}
 	
 	/**
@@ -331,7 +340,7 @@ public class ManagementCompany {
 	 * for the variables present and objects aswell
 	 */
 	public Plot getPlot() {
-		return plot;
+		return this.plot;
 	}
 
 	public void setPlot(Plot plot) {
