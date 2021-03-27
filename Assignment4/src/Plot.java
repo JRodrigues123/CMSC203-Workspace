@@ -1,4 +1,10 @@
-
+/**
+ * Justin Rodrigues
+ * 03/25/21
+ * Compiler: 13
+ * @author justinrodrigues
+ * @author Rob Alexander for the javadoc
+ */
 public class Plot {
 	
 	/**

@@ -1,3 +1,9 @@
+/**
+ * Justin Rodrigues
+ * 03/24/21
+ * Compiler : Java 13
+ * @author Professor khandan Monshi for the JavaDoc
+ */
 import java.util.Arrays;
 
 public class ManagementCompany {
