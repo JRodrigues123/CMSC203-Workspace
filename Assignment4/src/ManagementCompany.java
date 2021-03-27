@@ -236,7 +236,7 @@ public class ManagementCompany {
 	
 	/**
 	 * This'll find the property with the highest rent
-	 * @return
+	 * @return maxrent
 	 */
 	public double maxRentProp() {
 		
@@ -271,14 +271,18 @@ public class ManagementCompany {
 		return maxPropsRent;
 	}
 	
-	
+	/**
+	 * This'll display the property at it's index
+	 * @param i
+	 * @return display prop
+	 */
 	private String displayPropertyAtIndex(int i) {
 		
 		//This will be returned
 		String displayProp = "";
 		
 		/*
-		 * this will displays a propertie's info
+		 * this will displays a property's info
 		 */
 		if(properties[i] != null) {
 			
@@ -355,11 +359,10 @@ public class ManagementCompany {
 	@Override
 	public String toString() {
 		
-		//37
 		//This will be the return variable 
 		String manageString = "";
 		
-		//
+		//From here on out, the manage String will append any property info
 		manageString += "List of the properties for " + this.getName()
 							+ ",TaxID: " + this.taxID + "\n";
 		

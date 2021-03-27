@@ -52,7 +52,12 @@ public class Plot {
 		this.depth = depth;
 	}
 	
-	//This method will show if the coordinates overlap one another
+	/**
+	 * This will check whether or not the cooridinates will overlap
+	 * with one another
+	 * @param p
+	 * @return
+	 */
 	public boolean overlaps(Plot p) {
 		
 		/*
@@ -100,7 +105,7 @@ public class Plot {
 		overlaps3XY2 = x >= p.x && x < (p.width + p.x) && (depth + y) > p.y && (y + depth) <= (p.depth + p.y);
 		
 		/*
-		 * Fourth test
+		 * Final test
 		 */
 		overlaps4XY1 = (p.width + p.x) > x && (p.width + p.x) <= (width + x) && (p.depth + p.y) > y && (p.depth + p.y) <= (depth + y);
 		
