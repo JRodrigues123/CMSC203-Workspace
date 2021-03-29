@@ -5,6 +5,7 @@ public class MainCharacter {
 	private String name;
 	private String gender;
 	private String classType;
+	private int HP;
 	
 	//int variables
 	private int level;
@@ -12,9 +13,8 @@ public class MainCharacter {
 	public MainCharacter() {
 		
 		this.level = 1;
-		this.classType = classType;
-		this.gender = gender;
-		this.name = name;
+		this.HP = 1250;
+		
 	}
 	
 	//Sets the name and gets it

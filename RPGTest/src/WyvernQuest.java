@@ -7,6 +7,7 @@ public class WyvernQuest {
 		
 		Scanner in = new Scanner(System.in);
 		
+		//Elements used
 		Elements element;
 		
 		MainCharacter character = new MainCharacter();
@@ -45,10 +46,35 @@ public class WyvernQuest {
 		character.setName(name);
 		
 		System.out.println(character.getName() + "? What a beautiful name, fits you very well.");
-		System.out.println("You will now travers this trwacherous world full of demons and monsters");
+		System.out.println("You will now traverse this trwacherous world full of demons and monsters");
+		
+		System.out.println("But before you head out into this deep long journey, I will be giving "
+							+ "you Ol Reliable, take great care of it.");
+		System.out.println("YOU GOT THE SWORD!!!!!");
+		
+		Sword olReliable = new Sword(1, 25);
+		
+		olReliable.setName(swordName());
 		
 		
 		
+	}
+	
+	/**
+	 * For the sword name
+	 * @return
+	 */
+	public static String swordName() {
+		
+		String swordName;
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("What would you want to name the sword?");
+		
+		swordName = in.nextLine();
+		
+		return swordName;
 	}
 
 }
