@@ -4,18 +4,10 @@ public class ShapeDriver {
 	public static void main(String[] args) {
 		
 		
-		Shape s = new Shape(); //create an object
-		System.out.println(s.getColor())	 ;
-		System.out.println(s.getName())	 ;
-		System.out.println(s.getNumOfSides());
+		Shape tri1 = new Triangle(4, 7);
 		
+		System.out.println("The area of triangle is " + tri1.findArea());
 		
-		
-		Shape s2 = new Shape("Square", "Black", 5);
-		
-		System.out.println("This");
-		
-		Shape s3 = new Shape("Circle");
 		
 		
 	}

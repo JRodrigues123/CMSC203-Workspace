@@ -15,6 +15,8 @@ public class WyvernQuest {
 		String name;
 		String gender;
 		
+		int exp = 0;
+		
 		System.out.println("Welcome to the world of wadafuk palace, before we start your journey "+
 							"\nwhat is your Gender?(g for girl, b for Boy, or n for Neither, no uppercase) ");
 		gender = in.nextLine();

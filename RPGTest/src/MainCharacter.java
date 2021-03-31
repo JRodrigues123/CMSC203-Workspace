@@ -5,16 +5,57 @@ public class MainCharacter {
 	private String name;
 	private String gender;
 	private String classType;
-	private int HP;
 	
 	//int variables
 	private int level;
+	private int HP;
+	private int exp;
+	private int expThres;
+	private int i = 0;
 	
+	/**
+	 * An empty constructor
+	 */
 	public MainCharacter() {
 		
 		this.level = 1;
 		this.HP = 1250;
+		this.exp = 0;
+		this.expThres = 100;
 		
+	}
+	
+	/*
+	 * This will be for the experience points
+	 */
+	public String levelUp(int expShit) {
+		
+		this.exp = expShit;
+		
+		
+		if(this.exp > this.expThres) {
+			
+			expThres = 10 * (this.i + 1);
+			
+			this.i++;
+			
+			while(this.exp > this.expThres) {
+				
+				this.i++;
+				
+				expThres =  10 * this.i;
+				
+			}
+			
+			
+			
+		}
+		else {
+			
+			
+		}
+		
+		return "";
 	}
 	
 	//Sets the name and gets it

@@ -1,5 +1,5 @@
 /**
- * 
+ * Main Driver
  */
 import java.util.Scanner;
 
@@ -11,9 +11,11 @@ public class AnimalDriver {
 		
 		Scanner in = new Scanner(System.in);
 		
-		
+		Dog d1 = new Dog(5, 69.02, "Germane", "German Sheperd", "Black");
 				
+		Animal d2 = new Dog();
 		
+		System.out.println(d1.toString());
 		
 	}
 

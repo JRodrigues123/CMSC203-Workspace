@@ -3,11 +3,31 @@ public class Mammal extends Animal {
 
 	private boolean warmBlooded;
 	
-	
-	
-	public Mammal(int age, String size, double weight, String name) {
-		super(age, size, weight, name);
-		// TODO Auto-generated constructor stub
+	/**
+	 * A constructor for mammal with full parameters
+	 * @param age
+	 * @param size
+	 * @param weight
+	 * @param name
+	 * @param warmblood
+	 */
+	public Mammal(int age, double weight, String name, boolean warmblood) {
+		super(age, weight, name);
+		this.warmBlooded = warmblood;
 	}
+
+
+
+	public boolean isWarmBlooded() {
+		return warmBlooded;
+	}
+
+
+
+	public void setWarmBlooded(boolean warmBlooded) {
+		this.warmBlooded = warmBlooded;
+	}
+	
+	
 		
 }

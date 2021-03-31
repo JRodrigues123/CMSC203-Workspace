@@ -1,5 +1,5 @@
 
-public class Shape {
+public abstract class Shape {
 
 	private String name, color;
 	
@@ -50,6 +50,11 @@ public class Shape {
 		this.numOfSides = 0;
 		
 	}
+	
+	/*
+	 * Abstract Method
+	 */
+	public abstract double findArea();
 
 
 	public String getName() {
