@@ -20,11 +20,8 @@ public class CheckingAccount extends BankAccount{
 		//Takes parameters from the BankAccount
 		super(accountName, inAmount);
 		
-		//The mod account name
-		String modAccount = accountName + "-10";
-		
-		//USes the mututator method
-		this.setAccountNumber(modAccount);
+		//This sets the account number
+		this.setAccountNumber(getAccountNumber() + "-10");
 		
 		
 	}
