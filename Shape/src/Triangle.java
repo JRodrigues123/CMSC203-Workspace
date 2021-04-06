@@ -3,10 +3,10 @@ public class Triangle extends Shape{
 
 	private double base;
 	private double height;
-	private int sides = 3;
+	private final int SIDES = 3;
 	
-	public Triangle(double base, double height) {
-		super();
+	public Triangle(String n, String c, double base, double height) {
+		super(n, c);
 		this.base = base;
 		this.height = height;
 		
@@ -26,5 +26,18 @@ public class Triangle extends Shape{
 		
 		return area;
 	}
+
+
+
+
+
+
+	@Override
+	public String toString() {
+		return "base = " + this.base + ", height = " + this.height + ", sides = " + SIDES + ", Name " + getName()
+				+ ", Color = " + getColor();
+	}
+	
+	
 
 }

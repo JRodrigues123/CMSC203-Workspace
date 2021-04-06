@@ -15,7 +15,7 @@ public abstract class Shape {
 		numOfSides = 1;
 	}
 	
-	//Copy
+	//Copy Constructor
 	public Shape(Shape shape) {
 		
 		this.name = shape.name;
@@ -39,6 +39,12 @@ public abstract class Shape {
 		this.numOfSides = numOfSides;
 	}
 	
+	public Shape(String n, String c) {
+		
+		this.name = n;
+		this.color = c;
+	}
+	
 	/**
 	 * Constructor 3
 	 * @param name
@@ -55,6 +61,11 @@ public abstract class Shape {
 	 * Abstract Method
 	 */
 	public abstract double findArea();
+	
+	public final boolean isTwoDimensional() {
+		
+		return true;
+	}
 
 
 	public String getName() {
@@ -71,7 +82,11 @@ public abstract class Shape {
 		return numOfSides;
 	}
 	
-	
+	//ToString method
+	public String toString() {
+		
+		return this.name + "," + this.color;
+	}
 	
 	
 }
