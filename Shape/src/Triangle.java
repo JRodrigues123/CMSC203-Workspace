@@ -5,6 +5,17 @@ public class Triangle extends Shape{
 	private double height;
 	private final int SIDES = 3;
 	
+	/*
+	 * No param constructor
+	 */
+	public Triangle() {
+		super();
+		this.base = 0;
+		this.height = 0;
+		
+	}
+	
+	
 	public Triangle(String n, String c, double base, double height) {
 		super(n, c);
 		this.base = base;

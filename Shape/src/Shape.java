@@ -10,8 +10,8 @@ public abstract class Shape {
 	
 	public Shape() {
 		
-		name = "noName";
-		color = "NoColor";
+		name = "";
+		color = "";
 		numOfSides = 1;
 	}
 	

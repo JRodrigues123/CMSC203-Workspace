@@ -1,8 +1,20 @@
 import java.math.*;
 public class Circle extends Shape{
 	
-	double diameter;
+	private double diameter;
 	
+	/*
+	 * no arg constructor
+	 */
+	public Circle() {
+		
+		super();
+		this.diameter = 0.0;
+	}
+	
+	/*
+	 * Regular constructor
+	 */
 	public Circle(String n, String c,double diameter) {
 		super(n, c);
 		this.diameter = diameter;
