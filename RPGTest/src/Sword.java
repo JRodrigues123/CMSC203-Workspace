@@ -1,26 +1,17 @@
 /*
  * This is your first weapon class
  */
-public class Sword {
+public class Sword extends Weapons {
 	
-	private int damage;
 	private int rank;
 	
 	private String name;
 	
-	public Sword(int rank, int damage) {
+	public Sword(String n, String m,int rank) {
 		
-		this.damage = damage;
+		super(n, m);
 		this.rank = rank;
 		
-	}
-
-	public int getDamage() {
-		return damage;
-	}
-
-	public void setDamage(int damage) {
-		this.damage = damage;
 	}
 
 	public int getRank() {
@@ -37,6 +28,12 @@ public class Sword {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	@Override
+	public int damage() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	

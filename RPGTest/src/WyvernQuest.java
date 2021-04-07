@@ -54,29 +54,9 @@ public class WyvernQuest {
 							+ "you Ol Reliable, take great care of it.");
 		System.out.println("YOU GOT THE SWORD!!!!!");
 		
-		Sword olReliable = new Sword(1, 25);
-		
-		olReliable.setName(swordName());
-		
-		
+		Weapons olReliable = new Sword("olReliable", "Wood", 1);
 		
 	}
-	
-	/**
-	 * For the sword name
-	 * @return
-	 */
-	public static String swordName() {
 		
-		String swordName;
-		
-		Scanner in = new Scanner(System.in);
-		
-		System.out.println("What would you want to name the sword?");
-		
-		swordName = in.nextLine();
-		
-		return swordName;
-	}
 
 }
