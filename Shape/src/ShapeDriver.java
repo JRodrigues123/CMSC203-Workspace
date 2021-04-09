@@ -29,7 +29,8 @@ public class ShapeDriver {
 		//Now a for loop to get their information
 		for(int i = 0; i < shapes.length; i++) {
 			
-			System.out.println(String.format("%.2f", shapes[i].findArea()));
+			System.out.printf("%.2f", shapes[i].findArea());
+			System.out.println();
 			
 		}
 		
