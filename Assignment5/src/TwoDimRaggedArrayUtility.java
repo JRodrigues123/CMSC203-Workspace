@@ -175,7 +175,13 @@ public final class TwoDimRaggedArrayUtility {
 		return largeNumCol;
 	}
 	
-	
+	/**
+	 * This method is used to get the highest index
+	 * from the column
+	 * @param data
+	 * @param col
+	 * @return g
+	 */
 	static int getHighestInColumnIndex(double[][] data, int col) {
 		
 		//This variable will be returned
@@ -207,7 +213,12 @@ public final class TwoDimRaggedArrayUtility {
 		return g;
 	}
 	
-	
+	/**
+	 * This is used from the 
+	 * @param data
+	 * @param row
+	 * @return
+	 */
 	static double getHighestInRow(double[][] data, int row) {
 		
 		/*
@@ -245,7 +256,12 @@ public final class TwoDimRaggedArrayUtility {
 		return highInRow;
 	}
 	
-	
+	/**
+	 * 
+	 * @param data
+	 * @param row
+	 * @return
+	 */
 	static int getHighestInRowIndex(double[][] data, int row) {
 		
 		/*
@@ -300,7 +316,11 @@ public final class TwoDimRaggedArrayUtility {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
 	static double getLowestInArray(double[][] data) {
 		
 		/*
@@ -337,7 +357,12 @@ public final class TwoDimRaggedArrayUtility {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param data
+	 * @param col
+	 * @return
+	 */
 	static double getLowestInColumn(double[][] data, int col) {
 		
 		/*
@@ -348,13 +373,16 @@ public final class TwoDimRaggedArrayUtility {
 		double lowestNum = 0;
 		
 		/*
-		 * 
+		 * this for loop
+		 * is here to get the lowest column
 		 */
 		for(int n = 0; n < data.length; n++) {
 			
 			
 			/*
-			 * 
+			 * this will check whether or not the
+			 * columns is less than zero or the length 
+			 * isnt equal or less than the number of columns 
 			 */
 			if(col < 0 || data[n].length <= col) {
 				
@@ -370,31 +398,41 @@ public final class TwoDimRaggedArrayUtility {
 			
 		}
 		
-		//
+		//returns the lowest number from the columns
 		return lowestNum;
 	}
 	
-	
+	/**
+	 * This method will bring in the lowest column index from the 
+	 * from the data array
+	 * @param data
+	 * @param col
+	 * @return
+	 */
 	static int getLowestInColumnIndex(double[][] data, int col) {
 		
 		/*
-		 * 
+		 * this is to hold the lowest number
+		 * from the array
 		 */
 		double lowNum = 0;
 		
 		/*
-		 * 
+		 * This variable is used to hold the index that
+		 * contains the lowest number from the array
 		 */
 		int o = 0;
 		
 		/*
-		 * 
+		 * Nested loop for the array
 		 */
 		for(int p = 0; p < data.length; p++) {
 			
 			
 			/*
-			 * 
+			 * This if statement checks whether the length of
+			 * the array is <= the number of columns or 
+			 * the number of columns is less than 0
 			 */
 			if(data[p].length <= col || col < 0) {
 				
@@ -402,20 +440,28 @@ public final class TwoDimRaggedArrayUtility {
 			}
 			if(lowNum > data[p][col] || lowNum == 0 ){
 				
-				//
+				//o inherits the index number from p
 				o = p;
 				
-				//
+				/**
+				 * the lowest number from the array
+				 */
 				lowNum = data[p][col];
 				
 			}
 		}
 		
-		//
+		//returns the variable o
 		return o;
 	}
 	
-	
+	/**
+	 * This method will try to get
+	 * the lowest number in the row from the array
+	 * @param data
+	 * @param row
+	 * @return
+	 */
 	static double getLowestInRow(double[][] data, int row) {
 		
 		
@@ -426,7 +472,8 @@ public final class TwoDimRaggedArrayUtility {
 		double rowLowNum = 0;
 		
 		/*
-		 * 
+		 * this checks whether the rows is less than
+		 * 0 or the array length is less than the row
 		 */
 		if(row < 0 || data.length < row) {
 			
@@ -435,38 +482,49 @@ public final class TwoDimRaggedArrayUtility {
 		}
 		
 		/**
-		 *  
+		 *  A loop that goes through the array
 		 */
 		for(int q = 0; q < data[q].length; q++) {
 			
 			
 			if(rowLowNum > data[row][q] || rowLowNum == 0) {
 				
-				//
+				/*
+				 * This will get the lowest 
+				 * number from the row
+				 */
 				rowLowNum = data[row][q];
 			}
 		}
 		
-		//
+		//returns the lowest number
 		return rowLowNum;
 		
 	}
 	
-	
+	/**
+	 * This method gets the lowest number from the array
+	 * and it's index
+	 * @param data
+	 * @param row
+	 * @return r
+	 */
 	static int getLowestInRowIndex(double[][] data, int row) {
 		
 		/*
-		 * 
+		 * holds the lowest number from the row
 		 */
 		double lowNum = 0;
 		
 		/*
-		 * 
+		 * Hold the lowest number's 
+		 * index 
 		 */
 		int r = 0;
 		
 		/*
-		 * 
+		 * This checks the rows and array length to see 
+		 * if they are eligible
 		 */
 		if(row < 0 || row > data.length) {
 			
@@ -474,26 +532,27 @@ public final class TwoDimRaggedArrayUtility {
 		}
 		
 		/*
-		 * 
+		 * A loop that goes through the array rows
 		 */
 		for(int s = 0; s < data[s].length; s++) {
 			
 			/*
-			 * 
+			 * if a number from the array is less than the number
+			 * from lownum, lownum gets that number
 			 */
 			if(lowNum > data[row][s] || lowNum == 0) {
 				
-				//
+				//gets the index
 				r = s;
 				
-				//
+				//lownum initiates to the lowest number
 				lowNum = data[row][s];
 				
 			}
 			
 		}
 		
-		//
+		//returns the lowest number index
 		return r;
 	}
 	
@@ -524,7 +583,11 @@ public final class TwoDimRaggedArrayUtility {
 		
 	}
 	
-	
+	/**
+	 * 
+	 * @param data
+	 * @return
+	 */
 	static double getTotal(double[][] data) {
 		
 		/*
@@ -551,7 +614,12 @@ public final class TwoDimRaggedArrayUtility {
 		return arrayTotal;
 	}
 	
-	
+	/**
+	 * 
+	 * @param file
+	 * @return
+	 * @throws FileNotFoundException
+	 */
 	static double[][] readFile(File file) throws FileNotFoundException{
 		
 		/*
