@@ -114,6 +114,7 @@ public abstract class Beverage {
 	/*
 	 * The toString method
 	 */
+	@Override
 	public String toString() {
 		return "Name: " + this.name + ", Size: " + this.size;
 	}
