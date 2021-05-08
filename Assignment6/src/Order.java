@@ -1,4 +1,5 @@
 
-public class Order {
+public class Order implements OrderInterface, Comparable<Order>{
 
+	
 }
