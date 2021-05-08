@@ -69,7 +69,7 @@ public abstract class Beverage {
 	/*
 	 * These are the getters and setters
 	 */
-	public String getName() {
+	public String getBevName() {
 		return this.name;
 	}
 

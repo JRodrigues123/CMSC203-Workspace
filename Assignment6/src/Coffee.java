@@ -95,12 +95,17 @@ public class Coffee extends Beverage{
 		return syrup;
 	}
 	
+	public double getBasePrice() {
+		
+		return super.getBASE_PRICE();
+	}
+	
 	/**
 	 * This is the toString method
 	 */
 	public String toString() {
 		
-		return "Name: " + super.getName() + ", Size: " + super.getSize() + ", Extra Shot: "+ this.coffeeShot 
+		return "Name: " + super.getBevName() + ", Size: " + super.getSize() + ", Extra Shot: "+ this.coffeeShot 
 		
 				+ ", Extra Syrup: " + this.syrup + ", Price: " + this.calcPrice();
 	}
