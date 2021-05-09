@@ -40,6 +40,9 @@ public class Order implements OrderInterface, Comparable<Order>{
 		this.day = day;
 		this.customer = c;
 		this.numOfOrder = generateOrderNum();
+		
+		bevList = new ArrayList<>();
+		
 	}
 	
 	/**
@@ -215,8 +218,20 @@ public class Order implements OrderInterface, Comparable<Order>{
 	
 	public Beverage getBeverage(int itemNum) {
 		
-		return bevList.get(itemNum);
+		Beverage b = getBeverage().get(itemNum);
 		
+		if(bevList.get(itemNum) == null) {
+			
+			return null;
+		}
+		return b;
+		
+		
+	}
+	
+	public ArrayList<Beverage> getBeverage() {
+		
+		return bevList;
 	}
 	
 	

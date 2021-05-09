@@ -273,7 +273,7 @@ public class BevShop implements BevShopInterfce{
 	
 	public Order getCurrentOrder() {
 		
-		return this.getCurrentOrder();
+		return getOrderAtIndex(curOrder);
 		
 	}
 	
