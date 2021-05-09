@@ -9,7 +9,7 @@ public class Coffee extends Beverage{
 	private final double SYRUP_PRICE = 0.50;
 	
 	/*
-	 * This checks whther or not the customer wants 
+	 * This checks whether or not the customer wants 
 	 * an extra shot of coffee or extra syrup
 	 */
 	private boolean coffeeShot;
@@ -88,11 +88,22 @@ public class Coffee extends Beverage{
 	 * The getter methods needed
 	 */
 	public boolean isCoffeeShot() {
-		return coffeeShot;
+		return this.coffeeShot;
 	}
+	
+	public boolean getExtraShot() {
+		
+		return this.coffeeShot;
+	}
+			
 
 	public boolean isSyrup() {
-		return syrup;
+		return this.coffeeShot;
+	}
+	
+	public boolean getExtraSyrup() {
+		
+		return this.syrup;
 	}
 	
 	public double getBasePrice() {

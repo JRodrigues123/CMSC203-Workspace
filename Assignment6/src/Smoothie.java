@@ -94,6 +94,11 @@ public class Smoothie extends Beverage{
 	public boolean isProtein() {
 		return this.protein;
 	}
+	
+	public boolean getAddProtien() {
+		
+		return this.protein;
+	}
 
 	public int getNumOfFruits() {
 		return this.fruits;

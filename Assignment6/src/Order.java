@@ -20,7 +20,7 @@ public class Order implements OrderInterface, Comparable<Order>{
 	/*
 	 * This is used to hold the order number
 	 */
-	private int order;
+	private int numOfOrder;
 	
 	/*
 	 * This will hold the order time
@@ -39,7 +39,7 @@ public class Order implements OrderInterface, Comparable<Order>{
 		this.time = time;
 		this.day = day;
 		this.customer = c;
-		this.order = generateOrderNum();
+		this.numOfOrder = generateOrderNum();
 	}
 	
 	/**
@@ -105,11 +105,11 @@ public class Order implements OrderInterface, Comparable<Order>{
 	 */
 	public int compareTo(Order o) {
 		
-		if(this.order > o.getOrderNo()) {
+		if(this.numOfOrder > o.getOrderNo()) {
 			
 			return 1;
 		}
-		else if(order == o.getOrderNo()) {
+		else if(numOfOrder == o.getOrderNo()) {
 			
 			return 0;
 		}
@@ -188,7 +188,7 @@ public class Order implements OrderInterface, Comparable<Order>{
 	
 	
 	//All the getters
-	public DAY getDay() {
+	public DAY getOrderDay() {
 		return this.day;
 	}
 
@@ -201,11 +201,11 @@ public class Order implements OrderInterface, Comparable<Order>{
 	}
 
 	public int getOrderNo() {
-		return this.order;
+		return this.numOfOrder;
 	}
 
-	public int getTime() {
-		return this.order;
+	public int getOrderTime() {
+		return this.time;
 	}
 	
 	public int getTotalItems() {
@@ -225,7 +225,7 @@ public class Order implements OrderInterface, Comparable<Order>{
 	 */
 	public String toString() {
 		
-		String str = "Order Number: " + this.order + ", Order Day: " + this.day.toString()
+		String str = "Order Number: " + this.numOfOrder + ", Order Day: " + this.day.toString()
 					+ ", Order Time" + this.time + this.customer.toString();
 		
 		for(Beverage b : bevList) {
