@@ -254,6 +254,28 @@ public class Order implements OrderInterface, Comparable<Order>{
 		return str;
 	}
 
+	//Setters
+	public void setDay(DAY day) {
+		this.day = day;
+	}
+
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
+
+	public void setBevList(ArrayList<Beverage> bevList) {
+		this.bevList = bevList;
+	}
+
+	public void setNumOfOrder(int numOfOrder) {
+		this.numOfOrder = numOfOrder;
+	}
+
+	public void setTime(int time) {
+		this.time = time;
+	}
+	
+	
 	
 	
 

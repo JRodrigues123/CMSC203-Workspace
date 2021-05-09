@@ -69,7 +69,7 @@ public class BevShop implements BevShopInterfce{
 	@Override
 	public boolean validAge(int age) {
 		
-		if(age > this.MIN_AGE_FOR_ALCOHOL) {
+		if(age > MIN_AGE_FOR_ALCOHOL) {
 			
 			return true;
 		}
@@ -275,6 +275,32 @@ public class BevShop implements BevShopInterfce{
 		
 		return getOrderAtIndex(curOrder);
 		
+	}
+	
+	/*
+	 * The to string method
+	 */
+	
+	public String toString() {
+		
+		String str = "";
+		
+		str += "Monthly Orders: \n";
+		
+		/*
+		 * This enhanced loop goes 
+		 * through the order list and gets
+		 * their tostring method
+		 */
+		for(Order o : orders) {
+			
+			str+= o.toString();
+			
+		}
+		
+		str += "\nTotal Sales: " + this.totalMonthlySale();
+		
+		return str;
 	}
 	
 	
