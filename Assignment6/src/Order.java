@@ -29,7 +29,8 @@ public class Order implements OrderInterface, Comparable<Order>{
 	
 	
 	/**
-	 * 
+	 * This is a constructor for order
+	 * that creates a new bevList
 	 * @param time
 	 * @param day
 	 * @param c
@@ -79,8 +80,8 @@ public class Order implements OrderInterface, Comparable<Order>{
 	}
 	
 	/**
-	 * This generates a randome order number
-	 * @return
+	 * This generates a random order number
+	 * @return randNum
 	 */
 	public int generateOrderNum() {
 		
@@ -218,6 +219,9 @@ public class Order implements OrderInterface, Comparable<Order>{
 	
 	public Beverage getBeverage(int itemNum) {
 		
+		/*
+		 * This gets the beverage item number
+		 */
 		Beverage b = getBeverage().get(itemNum);
 		
 		if(bevList.get(itemNum) == null) {
@@ -236,7 +240,7 @@ public class Order implements OrderInterface, Comparable<Order>{
 	
 	
 	/**
-	 * 
+	 * This is the to String to method
 	 */
 	public String toString() {
 		

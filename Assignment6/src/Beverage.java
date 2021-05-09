@@ -23,7 +23,7 @@ public abstract class Beverage {
 	private SIZE size;
 	
 	/**
-	 * 
+	 * A constructor for Beverage
 	 * @param name
 	 * @param type
 	 * @param size

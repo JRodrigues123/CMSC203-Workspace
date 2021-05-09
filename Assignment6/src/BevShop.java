@@ -34,7 +34,9 @@ public class BevShop implements BevShopInterfce{
 	@Override
 	public boolean validTime(int time) {
 		
-		
+		/*
+		 * If the order is within a certain
+		 */
 		if(time <= MAX_TIME && time >= MIN_TIME) {
 			
 			return true;
@@ -156,6 +158,9 @@ public class BevShop implements BevShopInterfce{
 		//This is used to hold the order price total
 		double orderPrice = 0.0;
 		
+		/*
+		 * An enhanced for loop
+		 */
 		for(Order o : orders) {
 			
 			if(o.getOrderNo() == orderNo) {
@@ -201,7 +206,12 @@ public class BevShop implements BevShopInterfce{
 		}
 		return monthlyPrice;
 	}
-
+	
+	/**
+	 * This is a method that sorts 
+	 * the orders of the beverages from leas to 
+	 * most expensive
+	 */
 	@Override
 	public void sortOrders() {
 		

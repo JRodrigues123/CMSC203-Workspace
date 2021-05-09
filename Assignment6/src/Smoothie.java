@@ -21,7 +21,7 @@ public class Smoothie extends Beverage{
 	private final double FRUIT_PRICE = 0.5;
 	
 	/**
-	 * A parameterized constructor
+	 * A parameterized constructor for Smoothie
 	 * @param name
 	 * @param size
 	 * @param fruit

@@ -64,10 +64,15 @@ public class Coffee extends Beverage{
 	 * This equals method check the equality of the coffee
 	 * object
 	 * @param c
-	 * @return
+	 * @return false/true
 	 */
 	public boolean equals(Coffee c) {
 		 
+		
+		 /*
+		  * These if statements will check 
+		  * the equality of the Coffee object
+		  */
 		 if(this.syrup == c.syrup) {
 			 
 			 if(this.coffeeShot == c.coffeeShot) {
@@ -78,6 +83,7 @@ public class Coffee extends Beverage{
 				 }
 			 }
 		 }
+		 
 		 
 		 return false;
 	 }

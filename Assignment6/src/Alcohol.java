@@ -83,7 +83,7 @@ public class Alcohol extends Beverage{
 	}
 	
 	/**
-	 * 
+	 * This is the to String method
 	 */
 	@Override
 	public String toString() {
