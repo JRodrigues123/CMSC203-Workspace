@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"<Unnamed>","l":"Alcohol"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"<Unnamed>","l":"Beverage"},{"p":"<Unnamed>","l":"BevShop"},{"p":"<Unnamed>","l":"Coffee"},{"p":"<Unnamed>","l":"Customer"},{"p":"<Unnamed>","l":"DAY"},{"p":"<Unnamed>","l":"Order"},{"p":"<Unnamed>","l":"SIZE"},{"p":"<Unnamed>","l":"Smoothie"},{"p":"<Unnamed>","l":"TYPE"}]
